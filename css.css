@@ -1,0 +1,368 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(120deg, #f1f1f1, #e8fff6);
+}
+
+/* HEADER */
+.header {
+  background: #282A35;
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.header h1 {
+  font-size: 50px;
+  letter-spacing: 1px;
+}
+
+/* MAIN CONTAINER */
+.container {
+  max-width: 1100px;
+  margin: -40px auto 40px;
+  background: white;
+  padding: 40px;
+  border-radius: 14px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.hidden {
+  display: none;
+}
+
+/* QUIZ AREA */
+.quiz-box {
+  max-width: 850px;
+  margin: 40px auto;
+}
+
+.question {
+  font-size: 22px;
+  margin: 30px 0;
+  text-align: left;
+}
+
+/* OPTIONS */
+label {
+  display: block;
+  background: #f9f9f9;
+  padding: 14px 18px;
+  border-radius: 10px;
+  margin-top: 12px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+label:hover {
+  background: #e6fff4;
+  border-color: #04AA6D;
+}
+
+/* RADIO BUTTON */
+input[type=radio] {
+  transform: scale(1.2);
+  margin-right: 12px;
+}
+
+/* BUTTONS */
+button {
+  padding: 16px 46px;
+  background: linear-gradient(135deg, #04AA6D, #1fcf8f);
+  color: white;
+  border: none;
+  border-radius: 40px;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 30px;
+  box-shadow: 0 8px 20px rgba(4,170,109,0.3);
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+/* INPUT FIELDS */
+input[type=text],
+input[type=email] {
+  width: 100%;
+  padding: 16px;
+  font-size: 17px;
+  margin: 12px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* RESULT TABLE */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+  font-size: 18px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 14px;
+  text-align: center;
+}
+
+th {
+  background: #04AA6D;
+  color: white;
+  font-size: 19px;
+}
+
+/* CERTIFICATE */
+.certificate {
+  width: 1100px;
+  height: 650px;
+  margin: auto;
+  border: 12px solid #04AA6D;
+  padding: 60px;
+  text-align: center;
+  background: linear-gradient(135deg, #ffffff, #eafff5);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+}
+
+.certificate h1 {
+  font-size: 52px;
+  color: #04AA6D;
+  margin-bottom: 10px;
+}
+
+.certificate h2 {
+  font-size: 38px;
+  margin: 15px 0;
+}
+
+.certificate p {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.score {
+  font-size: 26px;
+  color: #282A35;
+  margin-top: 20px;
+}
+#timerBox {
+  position: sticky;
+  top: 0;
+  background: linear-gradient(135deg, #ff9800, #ff5722);
+  color: white;
+  padding: 14px;
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+#timer {
+  font-size: 26px;
+}
+/* CERTIFICATE PAGE CENTERING */
+.certificate-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+/* CERTIFICATE SIZE (A4 LOOK) */
+.certificate {
+  width: 1123px;       /* A4 landscape */
+  height: 794px;
+  background: linear-gradient(135deg, #ffffff, #eafff5);
+  border: 14px solid #04AA6D;
+  padding: 70px;
+  text-align: center;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.certificate h1 {
+  font-size: 56px;
+  color: #04AA6D;
+  margin-bottom: 20px;
+}
+
+.certificate h2 {
+  font-size: 40px;
+  margin: 20px 0;
+}
+
+.certificate p {
+  font-size: 24px;
+  margin: 12px 0;
+}
+
+.score {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+/* PRINT BUTTON STYLE */
+.print-btn {
+  display: block;
+  margin: 30px auto;
+  padding: 14px 40px;
+  font-size: 18px;
+  background: #04AA6D;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+@media print {
+
+  body * {
+    visibility: hidden;
+  }
+
+  #certificatePage,
+  #certificatePage * {
+    visibility: visible;
+  }
+
+  #certificatePage {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+
+  .print-btn {
+    display: none;
+  }
+}
+/* QUIZ TOP BAR */
+.quiz-top {
+  background: #282A35;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.quiz-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 60px;
+  color: white;
+}
+
+.quiz-logo {
+  font-size: 24px;
+  font-weight: 600;
+  color: #04AA6D;
+}
+
+.quiz-links span {
+  margin-left: 25px;
+  font-size: 15px;
+  cursor: default;
+  opacity: 0.7;
+}
+
+.quiz-links .active {
+  opacity: 1;
+  border-bottom: 3px solid #04AA6D;
+  padding-bottom: 5px;
+}
+#htmlPage, #cssPage, #jsPage {
+  padding-top: 40px;
+}
+.answer-section {
+  max-width: 900px;
+  margin: 20px auto;
+  text-align: left;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.answer-section h3 {
+  color: #04AA6D;
+  margin-bottom: 15px;
+}
+
+.answer-section ul {
+  list-style: decimal inside;
+  font-size: 18px;
+}
+
+.answer-section li {
+  margin: 6px 0;
+}
+.answer-section {
+  max-width: 900px;
+  margin: 25px auto;
+  background: #f9f9f9;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.answer-section h3 {
+  color: #04AA6D;
+  margin-bottom: 15px;
+}
+
+.answer-section ul {
+  list-style: decimal inside;
+  font-size: 18px;
+}
+
+.answer-section li {
+  margin: 6px 0;
+}
+/* CERTIFICATE A4 PAGE */
+.certificate-page {
+  background: #eaeaea;
+  padding: 40px 0;
+}
+
+.a4 {
+  width: 210mm;
+  height: 297mm;
+  background: white;
+  margin: auto;
+  padding: 25mm;
+  box-sizing: border-box;
+}
+
+.certificate {
+  width: 100%;
+  height: 100%;
+  border: 8px solid #04AA6D;
+  text-align: center;
+  padding: 30px;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  #certificatePage,
+  #certificatePage * {
+    visibility: visible;
+  }
+
+  #certificatePage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .print-btn {
+    display: none;
+  }
+}
+
+

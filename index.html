@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Web Development Quiz</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css.css">
+</head>
+<body>
+
+<div class="header">
+  <h1>Web Development Certification</h1>
+</div>
+
+<div class="container">
+  <!-- QUIZ TOP BAR -->
+<div class="quiz-top hidden" id="quizTop">
+  <div class="quiz-nav">
+    <div class="quiz-links">
+      <span id="tabHTML">HTML</span>
+      <span id="tabCSS">CSS</span>
+      <span id="tabJS">JavaScript</span>
+    </div>
+  </div>
+</div>
+
+  <div id="timerBox" class="hidden">
+  ⏰ Time Left: <span id="timer">10:00</span>
+</div>
+
+
+  <!-- REGISTER PAGE -->
+  <div id="registerPage">
+    <h2 align="center">Register</h2>
+    <input id="name" type="text" placeholder="Enter your name">
+    <input id="email" type="email" placeholder="Enter your email">
+    <button onclick="startQuiz()">Submit</button>
+  </div>
+
+  <!-- HTML QUIZ -->
+  <div id="htmlPage" class="hidden">
+    <h2 align="center">HTML Quiz</h2>
+    <div class="quiz-box" id="htmlBox"></div>
+    <button onclick="goCSS()">Next → CSS</button>
+  </div>
+
+  <!-- CSS QUIZ -->
+  <div id="cssPage" class="hidden">
+    <h2 align="center">CSS Quiz</h2>     
+    <div class="quiz-box" id="cssBox"></div>
+    <button onclick="goJS()">Next → JavaScript</button>
+  </div>
+
+  <!-- JS QUIZ -->
+  <div id="jsPage" class="hidden">
+    <h2 align="center">JavaScript Quiz</h2>
+    <div class="quiz-box" id="jsBox"></div>
+    <button onclick="showResult()">Show Result</button>
+  </div>
+
+  <!-- RESULT PAGE -->
+  <div id="resultPage" class="hidden">
+    <h2 align="center">Quiz Result</h2>
+    <table>
+      <tr>
+  <th>Subject</th>
+  <th>Correct</th>
+  <th>Wrong</th>
+  <th>Marks</th>
+  <th>%</th>
+  <th>Grade</th>
+</tr>
+
+      <tr>
+  <td>HTML</td>
+  <td id="hC"></td>
+  <td id="hW"></td>
+  <td id="hM"></td>
+  <td id="hP"></td>
+  <td id="hG"></td>
+</tr>
+
+      <tr>
+  <td>CSS</td>
+  <td id="cC"></td>
+  <td id="cW"></td>
+  <td id="cM"></td>
+  <td id="cP"></td>
+  <td id="cG"></td>
+</tr>
+
+      <tr>
+  <td>JavaScript</td>
+  <td id="jC"></td>
+  <td id="jW"></td>
+  <td id="jM"></td>
+  <td id="jP"></td>
+  <td id="jG"></td>
+</tr>
+
+
+      <h3 align="center" id="passFailStatus"></h3>
+
+    </table>
+    <button onclick="openPreview()">Preview Correct Answers</button>
+  </div>
+<!-- PREVIEW PAGE -->
+<div id="previewPage" class="hidden">
+
+<h1 align="center">Correct Answers – Preview</h1>
+
+<!-- ================= HTML ================= -->
+<h2>HTML – Correct Answers</h2>
+
+<p><b>1.</b> What does HTML stand for?</p>
+
+<p><b>Correct Answer: HyperText Markup Language</b></p><hr>
+
+<p><b>2.</b> Which tag is used to create a hyperlink?</p>
+<p><b>Correct Answer: a</b></p><hr>
+
+<p><b>3.</b> Which tag is used to display an image?</p>
+
+<p><b>Correct Answer: img</b></p><hr>
+
+<p><b>4.</b> Which attribute specifies the image path?</p>
+
+<p><b>Correct Answer: src</b></p><hr>
+
+<p><b>5.</b> Which is the largest heading tag?</p>
+
+<p><b>Correct Answer: h1</b></p><hr>
+
+<p><b>6.</b> Which tag creates a line break?</p>
+
+<p><b>Correct Answer: br</b></p><hr>
+
+<p><b>7.</b> Which tag creates an unordered list?</p>
+
+<p><b>Correct Answer: ul</b></p><hr>
+
+<p><b>8.</b> Which tag defines a table row?</p>
+
+<p><b>Correct Answer: tr</b></p><hr>
+
+<p><b>9.</b> Which tag defines a table cell?</p>
+
+<p><b>Correct Answer: td</b></p><hr>
+
+<p><b>10.</b> Which attribute opens a link in new tab?</p>
+ 
+<p><b>Correct Answer: target="_blank"</b></p><hr>
+
+<p><b>11.</b> Which tag defines a form?</p>
+
+<p><b>Correct Answer: form</b></p><hr>
+
+<p><b>12.</b> Which input type hides text?</p>
+
+<p><b>Correct Answer: password</b></p><hr>
+
+<p><b>13.</b> HTML comment syntax?</p>
+
+<p><b>Correct Answer: &lt;!-- --&gt;</b></p><hr>
+
+<p><b>14.</b> Which tag defines title?</p>
+
+<p><b>Correct Answer: title</b></p><hr>
+
+<p><b>15.</b> Which tag embeds JavaScript?</p>
+
+<p><b>Correct Answer: script</b></p><hr>
+
+<p><b>16.</b> Which tag is used for video?</p>
+
+<p><b>Correct Answer: video</b></p><hr>
+
+<p><b>17.</b> Which tag is used for audio?</p>
+
+<p><b>Correct Answer: audio</b></p><hr>
+
+<p><b>18.</b> Which attribute adds extra info?</p>
+
+<p><b>Correct Answer: class</b></p><hr>
+
+<p><b>19.</b> Checkbox input type?</p>
+
+<p><b>Correct Answer: checkbox</b></p><hr>
+
+<p><b>20.</b> Which tag creates a button?</p>
+
+<p><b>Correct Answer: button</b></p><hr>
+
+<!-- ================= CSS ================= -->
+<h2>CSS – Correct Answers</h2>
+
+<p><b>21.</b> What does CSS stand for?</p>
+
+<p><b>Correct Answer: Cascading Style Sheets</b></p><hr>
+
+<p><b>21.</b> What does CSS stand for?</p>
+
+<p><b>Correct Answer: Cascading Style Sheets</b></p><hr>
+
+<p><b>22.</b> Which CSS property is used to change the text color of an element?</p>
+
+<p><b>Correct Answer: color</b></p><hr>
+
+<p><b>23.</b> Which CSS property is used to set the background color of an element?</p>
+
+<p><b>Correct Answer: background-color</b></p><hr>
+
+<p><b>24.</b> Which CSS property is used to change the font size of text?</p>
+
+<p><b>Correct Answer: font-size</b></p><hr>
+
+<p><b>25.</b> Which symbol is used to select a class in CSS?</p>
+
+<p><b>Correct Answer: .</b></p><hr>
+
+<p><b>26.</b> Which symbol is used to select an id in CSS?</p>
+
+<p><b>Correct Answer: #</b></p><hr>
+
+<p><b>27.</b> Which CSS property is used to align text horizontally?</p>
+
+<p><b>Correct Answer: text-align</b></p><hr>
+
+<p><b>28.</b> Which CSS property is used to add space inside an element?</p>
+
+<p><b>Correct Answer: padding</b></p><hr>
+
+<p><b>29.</b> Which CSS property is used to add space outside an element?</p>
+
+<p><b>Correct Answer: margin</b></p><hr>
+
+<p><b>30.</b> Which CSS property is used to specify the font family of text?</p>
+
+<p><b>Correct Answer: font-family</b></p><hr>
+
+<p><b>31.</b> Which CSS property is used to completely hide an element?</p>
+
+<p><b>Correct Answer: display: none</b></p><hr>
+
+<p><b>32.</b> Which CSS property is used to make text bold?</p>
+
+<p><b>Correct Answer: font-weight</b></p><hr>
+
+<p><b>33.</b> Which CSS property is used to create rounded corners?</p>
+
+<p><b>Correct Answer: border-radius</b></p><hr>
+
+<p><b>34.</b> Which CSS property is used to set the width of an element?</p>
+
+<p><b>Correct Answer: width</b></p><hr>
+
+<p><b>35.</b> Which CSS property is used to set the height of an element?</p>
+
+<p><b>Correct Answer: height</b></p><hr>
+
+<p><b>36.</b> Which CSS property is used to add shadow to elements?</p>
+
+<p><b>Correct Answer: box-shadow</b></p><hr>
+
+<p><b>37.</b> Which CSS display value is used to create a flexible layout?</p>
+
+<p><b>Correct Answer: flex</b></p><hr>
+
+<p><b>38.</b> Which CSS property is used to control the transparency of an element?</p>
+
+<p><b>Correct Answer: opacity</b></p><hr>
+
+<p><b>39.</b> Which CSS property is used to change the mouse cursor?</p>
+
+<p><b>Correct Answer: cursor</b></p><hr>
+
+<p><b>40.</b> Which CSS unit is relative to the parent element?</p>
+
+<p><b>Correct Answer: %</b></p><hr>
+
+<!-- ================= JS ================= -->
+<!-- ================= JAVASCRIPT ================= -->
+<h2>JavaScript – Correct Answers</h2>
+
+<p><b>41.</b> JavaScript is a ______ language.</p>
+<p><b>Correct Answer: Scripting</b></p><hr>
+
+<p><b>42.</b> Which keyword is used to declare a variable in JavaScript?</p>
+<p><b>Correct Answer: let</b></p><hr>
+
+<p><b>43.</b> Which symbol is used for single-line comments in JavaScript?</p>
+<p><b>Correct Answer: //</b></p><hr>
+
+<p><b>44.</b> Which keyword is used to declare a constant in JavaScript?</p>
+<p><b>Correct Answer: const</b></p><hr>
+
+<p><b>45.</b> Which function is used to print output in the browser console?</p>
+<p><b>Correct Answer: console.log</b></p><hr>
+
+<p><b>46.</b> Which operator is used to compare both value and type?</p>
+<p><b>Correct Answer: ===</b></p><hr>
+
+<p><b>47.</b> Which keyword is used to define a function in JavaScript?</p>
+<p><b>Correct Answer: function</b></p><hr>
+
+<p><b>48.</b> Which loop is used when the number of iterations is known?</p>
+<p><b>Correct Answer: for</b></p><hr>
+
+<p><b>49.</b> Which event occurs when a user clicks a button?</p>
+<p><b>Correct Answer: onclick</b></p><hr>
+
+<p><b>50.</b> Which keyword is used to stop the execution of a loop?</p>
+<p><b>Correct Answer: break</b></p><hr>
+
+<p><b>51.</b> Which data type is used to store true or false values?</p>
+<p><b>Correct Answer: boolean</b></p><hr>
+
+<p><b>52.</b> What is the starting index of an array in JavaScript?</p>
+<p><b>Correct Answer: 0</b></p><hr>
+
+<p><b>53.</b> Which array method is used to add an element to the end?</p>
+<p><b>Correct Answer: push</b></p><hr>
+
+<p><b>54.</b> Which array method removes the last element?</p>
+<p><b>Correct Answer: pop</b></p><hr>
+
+<p><b>55.</b> Which object represents the browser window?</p>
+<p><b>Correct Answer: window</b></p><hr>
+
+<p><b>56.</b> Which keyword is used to handle errors in JavaScript?</p>
+<p><b>Correct Answer: try</b></p><hr>
+
+<p><b>57.</b> Which method converts a string into an integer?</p>
+<p><b>Correct Answer: parseInt</b></p><hr>
+
+<p><b>58.</b> Which keyword is used to check a condition?</p>
+<p><b>Correct Answer: if</b></p><hr>
+
+<p><b>59.</b> Which operator represents logical AND?</p>
+<p><b>Correct Answer: &&</b></p><hr>
+
+<p><b>60.</b> Which method is used to select an element by its ID?</p>
+<p><b>Correct Answer: getElementById</b></p><hr>
+
+<button onclick="showCertificate()">View Certificate</button>
+
+</div>
+
+
+
+<!-- CERTIFICATE PAGE -->
+<div id="certificatePage" class="hidden certificate-page">
+
+  <div class="a4">
+    <div class="certificate">
+
+      <h1>Certificate of Completion</h1>
+      <p>This is to certify that</p>
+
+      <h2 id="certName"></h2>
+
+      <p>has successfully completed the</p>
+      <p><b>Web Development Certification</b></p>
+
+      <p class="score" id="finalScore"></p>
+      <p>Date: <span id="certDate"></span></p>
+
+      <button class="print-btn" onclick="window.print()">Print Certificate</button>
+
+    </div>
+  </div>
+
+</div>
+
+
+<script src="javascript.js"></script>
+</body>
+</html>
